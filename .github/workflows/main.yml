@@ -14,4 +14,4 @@ jobs:
     steps:
       # Runs a set of commands using the runners shell
       - name: Print metadata
-        run: echo ${{github.pull_request.merged}} | jq
+        run: echo ${{github.pull_request.merged}} | jq -r 'to_entries[]'
