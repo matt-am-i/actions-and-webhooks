@@ -7,11 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    echo "::debug::test"
     
     # only trigger this is the PR has been merged
-    if: github.pull_request.merged == true
-    echo "::debug::merged"
+#     if: github.pull_request.merged == true
     
     outputs: ${{github.pull_request}}
     
