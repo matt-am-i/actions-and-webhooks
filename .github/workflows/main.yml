@@ -7,13 +7,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    echo "::debug::test"
     
     # only trigger this is the PR has been merged
     if: github.pull_request.merged == true
+    echo "::debug::merged"
     
     outputs: ${{github.pull_request}}
     
     steps:
       # Runs a set of commands using the runners shell
       - name: Print metadata
-        run: echo done
+        run: echo "done"
