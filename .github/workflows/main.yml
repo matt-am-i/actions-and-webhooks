@@ -1,0 +1,17 @@
+name: Push PR metadata
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # only trigger this is the PR has been merged
+    if: github.pull_request.merged == true
+
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Print metadata
+        run: echo ${{github.pull_request}}
